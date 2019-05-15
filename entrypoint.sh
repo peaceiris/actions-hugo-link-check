@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 LINE='##############################'
 MSGS='######## start action ########'
@@ -17,6 +17,7 @@ for i in `seq 0 600`; do # 5 min
     if [[ "${IS_SERVER_RUNNING}" == "200" ]]; then
         break
     fi
+    echo "error: time out" && exit 1
 done
 eval muffet ${OPTIONS} ${LOCAL_HOST}
 
