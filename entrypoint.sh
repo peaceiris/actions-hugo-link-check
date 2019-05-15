@@ -1,8 +1,8 @@
 #!/bin/bash
 
 LINE='##############################'
-MSGS='######## start action ########'
-MSGF='####### finish action ########'
+MSGS='####### start action #########'
+
 LOCAL_HOST="http://localhost:1313"
 
 echo ${LINE}
@@ -19,7 +19,3 @@ for i in `seq 0 600`; do # 5 min
     echo "error: time out" && exit 1
 done
 eval muffet ${OPTIONS} ${LOCAL_HOST}
-
-echo ${LINE}
-echo ${MSGF}
-echo ${LINE}
