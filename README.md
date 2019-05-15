@@ -6,6 +6,7 @@
 
 ## GitHub Actions to check broken links for Hugo
 
+- [gohugoio/hugo: The world’s fastest framework for building websites.](https://github.com/gohugoio/hugo)
 - [raviqqe/muffet: Fast website link checker in Go](https://github.com/raviqqe/muffet)
 
 <img width="400" alt="GitHub Actions to check broken links for Hugo" src="./images/ogp.svg">
