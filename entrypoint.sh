@@ -9,7 +9,6 @@ echo ${LINE}
 echo ${MSGS}
 echo ${LINE}
 
-ls -la
 hugo server > /dev/null &
 for i in `seq 0 600`; do # 5 min
     sleep 0.5
