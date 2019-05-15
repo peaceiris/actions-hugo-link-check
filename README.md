@@ -22,13 +22,7 @@ workflow "Main workflow" {
   resolves = ["hugo-link-check"]
 }
 
-action "is-branch-master" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
-}
-
 action "hugo-link-check" {
-  needs = "is-branch-master"
   uses = "peaceiris/actions-hugo-link-check@v0.55.5"
   env = {
     OPTIONS = ""
