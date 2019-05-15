@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# fail on unset variables and command errors
-set -e -o pipefail # -x: is for debugging
-
 LINE='##############################'
 MSGS='######## start action ########'
 MSGF='####### finish action ########'
