@@ -9,9 +9,9 @@ LABEL "repository"="https://github.com/peaceiris/actions-hugo-link-check"
 LABEL "homepage"="https://github.com/peaceiris/actions-hugo-link-check"
 LABEL "maintainer"="peaceiris"
 
-ENV HUGO_VERSION='v0.55.5'
+ENV HUGO_VERSION='0.55.5'
 ENV HUGO_NAME="hugo_extended_${HUGO_VERSION}_Linux-64bit"
-ENV HUGO_URL="https://github.com/gohugoio/hugo/releases/download/${HUGO_VERSION}/${HUGO_NAME}.deb"
+ENV HUGO_URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_NAME}.deb"
 
 RUN apt-get update && apt-get upgrade -y && \
     wget "${HUGO_URL}" && \

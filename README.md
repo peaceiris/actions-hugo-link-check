@@ -1,17 +1,14 @@
-
-
-
 [![license](https://img.shields.io/github/license/peaceiris/actions-hugo-link-check.svg)](https://github.com/peaceiris/actions-hugo-link-check/blob/master/LICENSE)
 [![release](https://img.shields.io/github/release/peaceiris/actions-hugo-link-check.svg)](https://github.com/peaceiris/actions-hugo-link-check/releases/latest)
 [![GitHub release date](https://img.shields.io/github/release-date/peaceiris/actions-hugo-link-check.svg)](https://github.com/peaceiris/actions-hugo-link-check/releases)
 
 
 
-## GitHub Actions for hugo-link-check
+## GitHub Actions to check broken links for Hugo
 
 - [raviqqe/muffet: Fast website link checker in Go](https://github.com/raviqqe/muffet)
 
-<img width="400" alt="GitHub Actions for hugo-link-check" src="./images/ogp.svg">
+<img width="400" alt="GitHub Actions to check broken links for Hugo" src="./images/ogp.svg">
 
 
 
