@@ -17,7 +17,7 @@
 
 ### Create `main.workflow`
 
-```sh
+```hcl
 workflow "Main workflow" {
   on = "push"
   resolves = ["hugo-link-check"]
