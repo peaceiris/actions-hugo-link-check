@@ -9,6 +9,11 @@
 - [gohugoio/hugo: The world’s fastest framework for building websites.](https://github.com/gohugoio/hugo)
 - [raviqqe/muffet: Fast website link checker in Go](https://github.com/raviqqe/muffet)
 
+This action runs the following commands.
+
+- `hugo server ${HUGO_OPTIONS} &`
+- `muffet ${OPTIONS} http://localhost:1313`
+
 <img width="400" alt="GitHub Actions to check broken links for Hugo" src="./images/ogp.svg">
 
 
@@ -26,7 +31,8 @@ workflow "Main workflow" {
 action "hugo-link-check" {
   uses = "peaceiris/actions-hugo-link-check@v0.55.5"
   env = {
-    OPTIONS = ""
+    HUGO_OPTIONS = "--buildDrafts"
+    OPTIONS = "-e 'http://localhost:8000'"
   }
 }
 ```

@@ -9,7 +9,7 @@ echo ${LINE}
 echo ${MSGS}
 echo ${LINE}
 
-hugo server > /dev/null &
+eval hugo server ${HUGO_OPTIONS} > /dev/null &
 for i in `seq 0 600`; do # 5 min
     sleep 0.5
     IS_SERVER_RUNNING=$(curl -LI ${LOCAL_HOST} -o /dev/null -w '%{http_code}' -s)
