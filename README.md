@@ -13,8 +13,11 @@
 
 This action runs the following commands.
 
-- `hugo server ${HUGO_OPTIONS} &`
-- `muffet ${OPTIONS} http://localhost:1313`
+```sh
+hugo server ${HUGO_OPTIONS} &
+# wait for starting hugo server (time out 5 min)
+muffet ${OPTIONS} http://localhost:1313
+```
 
 
 
