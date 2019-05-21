@@ -16,10 +16,10 @@ ENV HUGO_URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION
 RUN apt-get update && apt-get upgrade -y && \
     wget "${HUGO_URL}" && \
     apt-get install "./${HUGO_NAME}.deb" && \
-    rm -rf "./${HUGO_NAME}.deb" "${HUGO_NAME}" /go/src && \
+    rm -rf "./${HUGO_NAME}.deb" "${HUGO_NAME}" && \
     go get -u github.com/raviqqe/muffet && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* /go/src
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ]
