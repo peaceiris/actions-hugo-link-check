@@ -50,6 +50,8 @@ action "hugo-link-check" {
 
 
 
-## Supprt author
+## About the author
+
+- [peaceiris's homepage](https://peaceiris.com/)
 
 <a href="https://www.patreon.com/peaceiris"><img src="./images/patreon.jpg" alt="peaceiris - Patreon" width="150px"></a>
