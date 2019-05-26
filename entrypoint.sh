@@ -6,16 +6,16 @@ MSGS='####### start action #########'
 LOCAL_HOST="http://localhost:1313"
 
 echo ${LINE}
-echo ${MSGS}
+echo "${MSGS}"
 echo ${LINE}
 
-eval hugo server ${HUGO_OPTIONS} > /dev/null &
-for i in `seq 0 600`; do # 5 min
+eval hugo server "${HUGO_OPTIONS}" > /dev/null &
+for i in $(seq 0 600); do # 5 min
     sleep 0.5
     IS_SERVER_RUNNING=$(curl -LI ${LOCAL_HOST} -o /dev/null -w '%{http_code}' -s)
     if [[ "${IS_SERVER_RUNNING}" == "200" ]]; then
         break
     fi
-    echo "error: time out" && exit 1
+    echo "error: time out $((i/2)) sec" && exit 1
 done
-eval muffet ${OPTIONS} ${LOCAL_HOST}
+eval muffet "${OPTIONS}" ${LOCAL_HOST}
