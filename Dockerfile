@@ -1,4 +1,4 @@
-FROM golang:1.11.10
+FROM golang:1.12.7-buster
 
 LABEL "com.github.actions.name"="Hugo broken link check with muffet"
 LABEL "com.github.actions.description"="Hugo broken link check quickly with raviqqe/muffet"
@@ -10,16 +10,11 @@ LABEL "homepage"="https://github.com/peaceiris/actions-hugo-link-check"
 LABEL "maintainer"="peaceiris"
 
 ENV HUGO_VERSION='0.56.0'
-ENV HUGO_NAME="hugo_extended_${HUGO_VERSION}_Linux-64bit"
-ENV HUGO_URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_NAME}.deb"
+ENV HUGO_URL='https://github.com/gohugoio/hugo.git'
 
-RUN apt-get update && \
-    wget "${HUGO_URL}" && \
-    apt-get -y install --no-install-recommends "./${HUGO_NAME}.deb" && \
-    rm -rf "./${HUGO_NAME}.deb" "${HUGO_NAME}" && \
-    go get -u github.com/raviqqe/muffet && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /go/src
+RUN git clone ${HUGO_URL} -b v${HUGO_VERSION} --depth 1 /hugo && \
+    cd /hugo && \
+    go install --tags extended
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ]
