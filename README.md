@@ -32,7 +32,7 @@ workflow "Main workflow" {
 }
 
 action "hugo-link-check" {
-  uses = "peaceiris/actions-hugo-link-check@v0.56.0-mod"
+  uses = "peaceiris/actions-hugo-link-check@v0.56.1"
   env = {
     HUGO_OPTIONS = "--buildDrafts"
     OPTIONS = "-e 'http://localhost:8000'"
