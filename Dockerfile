@@ -14,7 +14,8 @@ ENV HUGO_URL='https://github.com/gohugoio/hugo.git'
 
 RUN git clone ${HUGO_URL} -b v${HUGO_VERSION} --depth 1 /hugo && \
     cd /hugo && \
-    go install --tags extended
+    go install --tags extended && \
+    go get -u github.com/raviqqe/muffet
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ]
